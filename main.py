@@ -21,7 +21,7 @@ if __name__=="__main__":
 
     model = generate_model(opt)
     print('loading model {}'.format(opt.model))
-    model_data = torch.load(opt.model,map_location='cpu')
+    model_data = torch.load(opt.model)
     assert opt.arch == model_data['arch']
     model.load_state_dict(model_data['state_dict'],strict=False)
     model.eval()
