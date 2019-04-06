@@ -23,7 +23,7 @@ if __name__=="__main__":
     print('loading model {}'.format(opt.model))
     model_data = torch.load(opt.model)
     assert opt.arch == model_data['arch']
-    model.load_state_dict(model_data['state_dict'],strict=False)
+    model.load_state_dict(model_data['state_dict'])
     model.eval()
     if opt.verbose:
         print(model)
